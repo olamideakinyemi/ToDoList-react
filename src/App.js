@@ -4,21 +4,22 @@ import "./App.css";
 function App() {
     const [todos, setTodos] = React.useState([]);
     const [todo, setTodo] = React.useState("");
-    const [todoEditing, setTodoEditing] = React.useState(null);
-    const [editingText, setEditingText] = React.useState("");
+    const [todoEditing, setTodoEditing] = React.useState(null)
+    const [editingText, setEditingText] = React.useState("")
+
 
     React.useEffect(() => {
-        const temp = localStorage.getItem("todos")
-        const loadedTodos = JSON.parse(temp)
+      const temp = localStorage.getItem("todos")
+      const loadedTodos = JSON.parse(temp)
 
-        if (loadedTodos) {
-            setTodos(loadedTodos);
-        }
+      if(loadedTodos){
+        setTodos(loadedTodos)
+      }
     }, [])
 
     React.useEffect(() => {
-        const temp = JSON.stringify(todos)
-        localStorage.setItem("todos", temp)
+      const temp = JSON.stringify(todos)
+      localStorage.setItem("todos", temp)
     }, [todos]);
 
     function handleSubmit(e) {
