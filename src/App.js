@@ -66,7 +66,7 @@ function App() {
     return (
         <div className="App">
             <form onSubmit={handleSubmit}>
-                <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo} />
+                <input className="input-field" type="text" onChange={(e) => setTodo(e.target.value)} value={todo} />
                 <button type="submit">Add Todo</button>
             </form>
             {todos.map((todo) => (
